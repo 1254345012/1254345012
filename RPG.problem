@@ -1,0 +1,28 @@
+#include<stdio.h>
+int way(int number);
+int main()
+{
+	int t,number;
+	scanf("%d",&t);
+	while(t--)
+	{
+		scanf("%d",&number);
+		printf("%d\n",way(number));
+	}
+	return 0;
+}
+int way(int number)
+{
+	if(number == 1)
+	{
+		return 3;
+	}
+	if(number == 2 ||number == 3)
+	{
+		return 6;
+	}
+	else
+	{
+		return 2 * way(number - 2) + way(number-1);
+	}
+}
